@@ -29,6 +29,7 @@
 		<module>cloud-config-server4000</module>
 		<module>cloud-config-client4200</module>
 		<module>cloud-provider-payment-springconfig8001</module>
+		<module>cloud-provider-payment-springconfig8002</module>
 	</modules>
 
 	<name>Maven</name>

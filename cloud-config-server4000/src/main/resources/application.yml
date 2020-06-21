@@ -10,8 +10,8 @@ spring:
         git:
           uri: https://github.com/abacuszh/cloud2020-config.git
           search-paths:
-            - cloud2020-config
-        label: master
+            - cloud-payment-service
+      label: master
   
 eureka:
   client:
