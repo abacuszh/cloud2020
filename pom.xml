@@ -14,8 +14,8 @@
 		<module>cloud-provider-payment8001</module>
 		<module>cloud-consumer-order18080</module>
 		<module>cloud-api-commons</module>
-		<module>eureka-server10080</module>
-		<module>eureka-server10081</module>
+		<module>cloud-eureka-server10080</module>
+		<module>cloud-eureka-server10081</module>
 		<module>cloud-provider-payment8002</module>
 		<module>cloud-provider-consul-payment8005</module>
 		<module>cloud-provider-consul-payment8006</module>
