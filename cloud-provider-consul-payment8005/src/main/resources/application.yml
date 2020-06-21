@@ -1,0 +1,31 @@
+server:
+  port: 8005
+  
+spring:
+  application:
+    name: cloud-payment-service-consul
+  mvc.servlet.path: /base
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    #driver-class-name: com.mysql.cj.jdbc.Driver
+    #url: jdbc:mysql://localhost:3306/cloudpracdb?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/springclouddb
+    username: user
+    password: admin
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+        prefer-ip-address: true
+        health-check-interval: 10s
+        health-check-critical-timeout: 30s
+        health-check-path: /base/health
+        instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+    
+mybatis:
+  mapperLocations: classpath:mapper/*Mapper.xml
+  type-aliases-package: org.aiguigu.springcloud.entities
+  

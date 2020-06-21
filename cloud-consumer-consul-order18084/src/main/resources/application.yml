@@ -1,0 +1,19 @@
+server:
+  port: 18084
+  
+spring:
+  application:
+    name: cloud-consumer-service-consul
+  mvc.servlet.path: /consumer
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+        prefer-ip-address: true
+        health-check-interval: 10s
+        health-check-critical-timeout: 30s
+        health-check-path: /consumer/health
+        instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+    

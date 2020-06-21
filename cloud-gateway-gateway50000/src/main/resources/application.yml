@@ -1,0 +1,35 @@
+server:
+  port: 50000
+  
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      - id: payment_route1
+        uri: lb://CLOUD-PAYMENT-SERVICE
+        predicates:
+        - Path=/base/payment/**
+#      routes:
+#      - id: payment_route1
+#        uri: http://localhost:8001
+#        predicates:
+#        - Path=/base/payment/**
+#      - id: payment_route2
+#        uri: http://localhost:8001
+#        predicates:
+#        - Path=/base/payment/lb/**
+    
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka10080.org:10080/eureka/, http://eureka10081.org:10081/eureka/
+  instance:
+    instance-id: gateway50000
+    prefer-ip-address: true

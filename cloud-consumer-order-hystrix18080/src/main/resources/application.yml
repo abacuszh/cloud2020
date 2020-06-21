@@ -1,0 +1,29 @@
+server:
+  port: 18080
+  
+spring:
+  application:
+    name: cloud-consumer-service-hystrix
+  mvc.servlet.path: /consumer
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka10080.org:10080/eureka/ #http://eureka10081.org:10080/eureka/,
+  instance:
+    instance-id: consumer18080
+    prefer-ip-address: true
+  
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+
+logging:
+  level:
+    org.aiguigu.springcloud.service.FeignPaymentService: debug
+    
+feign:
+  hystrix:
+    enabled: true
