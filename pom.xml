@@ -26,6 +26,9 @@
 		<module>cloud-consumer-order-hystrix18080</module>
 		<module>cloud-consumer-hystrix-dashboard9001</module>
 		<module>cloud-gateway-gateway50000</module>
+		<module>cloud-config-server4000</module>
+		<module>cloud-config-client4200</module>
+		<module>cloud-provider-payment-springconfig8001</module>
 	</modules>
 
 	<name>Maven</name>

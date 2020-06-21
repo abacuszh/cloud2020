@@ -1,0 +1,29 @@
+server:
+  port: 4200
+  
+spring:
+  application:
+    name: cloud-config-client
+  cloud:
+    config:
+      label: master
+      name: config
+      profile: dev
+      uri: http://config4000.org:4000/
+  
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka10081.org:10081/eureka/,http://eureka10080.org:10080/eureka/
+  instance:
+    instance-id: springconfigclient4200
+    prefer-ip-address: true
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
