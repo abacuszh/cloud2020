@@ -1,0 +1,35 @@
+server:
+  port: 8803
+  
+spring:
+  application:
+    name: cloud-stream-consumer
+  cloud:
+    stream:
+      binders:
+        defaultRabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: guest
+                password: guest
+      bindings:
+        input:                        # msg consumer
+          destination: studyExchange  # which exchange to use
+          content-type: application/json
+          binder: defaultRabbit       # defined several lines above
+          group: streamconsumergroup  # use this to make one msg be consumed only by one client
+  
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka10081.org:10081/eureka/,http://eureka10080.org:10080/eureka/
+  instance:
+    instance-id: streamconsumer8803
+    prefer-ip-address: true
+    
