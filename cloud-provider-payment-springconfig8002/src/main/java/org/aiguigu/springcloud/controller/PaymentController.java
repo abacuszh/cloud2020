@@ -41,6 +41,9 @@ public class PaymentController {
 	@Value("${server.port}")
 	private String serverPort;
 	
+	@Value("${config.info}")
+	private String configInfo;
+	
 	@Autowired
 	private DiscoveryClient discoveryClient;
 	
@@ -81,5 +84,11 @@ public class PaymentController {
 		});
 		
 		return discoveryClient;
+	}
+	
+	@GetMapping("/configInfo")
+	@ApiOperation("getConfigInfo")
+	public String getConfigInfo() {
+		return configInfo;
 	}
 }
