@@ -1,0 +1,15 @@
+server:
+  port: 18080
+  
+spring:
+  application:
+    name: nacos-consumer-service-openfeign
+  mvc.servlet.path: /consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+logging:
+  level:
+    org.aiguigu.springcloud.service.FeignPaymentService: debug

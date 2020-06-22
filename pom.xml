@@ -33,6 +33,9 @@
 		<module>cloud-stream-provider-rabbitmq8801</module>
 		<module>cloud-stream-consumer-rabbitmq8802</module>
 		<module>cloud-stream-consumer-rabbitmq8803</module>
+		<module>cloud-alibaba-provider-nacos20001</module>
+		<module>cloud-alibaba-provider-nacos20002</module>
+		<module>cloud-alibaba-consumer-nacos18080</module>
 	</modules>
 
 	<name>Maven</name>
