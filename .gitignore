@@ -2,3 +2,7 @@
 .apt*
 target
 .settings
+.classpath
+.project
+*/.project 
+*/.classpath 
