@@ -36,6 +36,7 @@
 		<module>cloud-alibaba-provider-nacos20001</module>
 		<module>cloud-alibaba-provider-nacos20002</module>
 		<module>cloud-alibaba-consumer-nacos18080</module>
+		<module>cloud-provider-springrestdata-provider8010</module>
 	</modules>
 
 	<name>Maven</name>
